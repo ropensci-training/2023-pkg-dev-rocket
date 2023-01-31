@@ -37,7 +37,7 @@ cat("\n```\n")
 ```
 
 ```{r red, results="asis", cache=TRUE, echo=FALSE}
-get_pic(id = 3697811, alt = "Red rocket ship", 400)
+get_pic(id = 7105805, alt = "Plastic rocket ship", 300)
 ```
 
 

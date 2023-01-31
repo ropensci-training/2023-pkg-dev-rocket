@@ -7,7 +7,7 @@ layout: list
 weight: 11
 output: hugodown::md_document
 countdown: true
-rmd_hash: 4aa88c5f3d46182e
+rmd_hash: ba334dc1458a6df2
 
 ---
 
@@ -19,7 +19,7 @@ rmd_hash: 4aa88c5f3d46182e
 
 <div class="highlight">
 
-{{< figure src="3697811.jpeg" alt="Red rocket ship" caption="Picture by [Matheus Bertelli on Pexels](https://www.pexels.com/photo/editorial-photo-of-red-rocket-ship-3697811/)." width="400" >}}
+{{< figure src="7105805.jpeg" alt="Plastic rocket ship" caption="Picture by [Kindel Media on Pexels](https://www.pexels.com/photo/close-up-shot-of-a-rocket-on-the-grass-7105805/)." width="300" >}}
 
 </div>
 
