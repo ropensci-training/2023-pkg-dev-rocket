@@ -1,0 +1,9 @@
+---
+title: Develop Packages Together
+weight: 2
+chapter: true
+slides: true
+menuTitle: Together
+---
+
+Why and how to work as team. :smile_cat:

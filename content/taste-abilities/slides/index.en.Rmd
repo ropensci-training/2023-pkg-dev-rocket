@@ -1,0 +1,270 @@
+---
+outputs:
+- Reveal
+title: Better packages
+hidden: true
+layout: list
+weight: 11
+output: hugodown::md_document
+countdown: true
+---
+
+# Better packages
+
+```{r, echo=FALSE}
+asciicast::init_knitr_engine(
+  echo = TRUE,
+  echo_input = FALSE,
+  startup = quote({
+    library(cli)
+  })
+)
+library("magrittr")
+get_pic <- function(id, alt, width) {
+  
+  info <- httr::GET(
+    paste0("https://api.pexels.com/v1/photos/", id),
+    httr::add_headers(Authorization = Sys.getenv("PEXELS_KEY"))
+  ) %>%
+    httr::content()
+  download.file(info$src$large, paste0(id, ".jpeg"))
+  cat("```{=html}\n")
+cat(paste0('{', '{< figure src="',
+paste0(id, ".jpeg"),
+'" alt="',
+alt,
+'" caption="Picture by [',
+info$photographer,
+' on Pexels](',
+info$url,
+')." width="',
+width , '" >}', '}'))
+cat("\n```\n")
+}
+```
+
+```{r red, results="asis", cache=TRUE, echo=FALSE}
+get_pic(id = 3697811, alt = "Red rocket ship", 250)
+```
+
+
+---
+
+## My R package development creds
+
+I really :heart: R package development
+
+* Volunteer editor for [rOpenSci Software Peer Review](https://ropensci.org/software-review).
+
+* At work, maintenance of [rOpenSci dev guide](https://devguide.ropensci.org).
+
+* Created the [R-hub blog](https://blog.r-hub.io).
+
+* Worked on the [HTTP testing in R](https://books.ropensci.org/http-testing/) book.
+
+---
+
+## My R package development creds
+
+Contributed to
+
+* [pkgdown 2.0.0](https://www.tidyverse.org/blog/2021/12/pkgdown-2-0-0/) (to produce documentation websites for packages)
+
+* [fledge 0.1.0](https://cynkra.github.io/fledge/) (Smoother change tracking and versioning for R packages)
+
+* [glitter 0.1.0](https://lvaudor.github.io/glitter/) (a SPARQL domain-specific language)
+
+---
+
+## What is good code
+
+> The only way to write good code is to write tons of shitty code first. Feeling shame about bad code stops you from getting to good code
+
+[Hadley Wickham's 2015 tweet](https://twitter.com/hadleywickham/status/589068687669243905)
+
+---
+
+## What is good code?
+
+> If you’re an experienced programmer and you’re tempted to code-shame someone, try thinking back to your own million lines of bad code. Imagine someone had mocked you then, the way I’d like to mock myself for my Perl/Java “solution”. Would you have continued asking for help? Would you have ever gotten through your million lines?
+
+David Robinson's blog post ["A Million Lines of Bad Code"](http://varianceexplained.org/programming/bad-code/)
+
+---
+
+## Today's workshop
+
+I'll present a collection of very useful things I've learnt over the past few years.
+
+Then we can discuss or you can pick one aspect to explore in your one package.
+
+---
+
+## Interface
+
+---
+
+## Nice messages
+
+Get to know the [cli package](https://cli.r-lib.org/reference/index.html)
+
+```{r}
+variable <- 42
+cli::cli_alert_info("Set {.field parameter} to {.val {variable}}")
+```
+
+---
+
+## Nice messages
+
+How to control verbosity? How to shup your package up?
+
+- argument in each function :weary:
+
+- global option à la `usethis.quiet`
+
+```{r, eval=FALSE}
+cli_alert_info <- function(...) {
+  if (!getOption("usethis.quiet", default = FALSE)) {
+    cli::cli_alert_info(...)
+  }
+}
+```
+
+---
+
+## Nice messages
+
+Further reading: https://github.com/ropensci/dev_guide/issues/603
+
+_:toolbox: Are there messages in your package you could improve?_
+
+---
+
+## Error messages
+
+* Tips on content in the [tidyverse style guide](https://style.tidyverse.org/error-messages.html) with examples. 
+
+* Interface with `cli::cli_abort()`
+
+```{r, error = TRUE}
+cli::cli_abort(
+  c(
+    "Can't find good error message.",
+    i = "Read the tidyverse style guide."
+  )
+)
+
+```
+
+---
+
+## Error messages
+
+_:toolbox: Go through your package's error messages (look for `stop()` and equivalents). Could some of them be improved by applying the tidyverse guidance?_
+
+---
+
+## Argument checks
+
+* Document argument type, default.
+
+* Check arguments. `rlang::arg_match()` for instance.
+
+Further reading: [Checking the inputs of your R functions](https://blog.r-hub.io/2022/03/10/input-checking/) by Hugo Gruson , Sam Abbott , Carl Pearson.
+
+---
+
+## Arguments checks
+
+_:toolbox: Does your package document and validate arguments? Improve this in one function._
+
+---
+
+## Less code or less headaches
+
+---
+
+## Weigh your dependencies
+
+Does this dependency spark joy? :wink:
+
+- A dependency is code that someone else carefully crafted and tested!
+- A dependency is a failure point.
+
+Further reading: [Dependencies: Mindset and Background](https://r-pkgs.org/dependencies-mindset-background.html) in the R Packages book by Hadley Wickham and Jenny Bryan.
+
+---
+
+## Weight your dependencies
+
+_:toolbox: Are there dependencies you could add or remove from your package?_
+
+---
+
+## Less code?
+
+Feature creep: " excessive ongoing expansion or addition of new features in a product" https://en.wikipedia.org/wiki/Feature_creep
+
+Okay to split the package.
+
+Okay to say no to feature requests. [Example](https://github.com/r-lib/pkgdown/issues/1430#issuecomment-924268834)
+
+> Thanks for filing this issue! Unfortunately, developing good software requires relentless focus, which means that we have to say no to many good ideas. Even though I'm closing this issue, I really appreciate the feedback, and hope you'll continue to contribute in the future smile
+
+---
+
+## Less code
+
+_:toolbox: Are there feature requests you'd like to say no to? Save answer as [GitHub reply](https://docs.github.com/en/get-started/writing-on-github/working-with-saved-replies/creating-a-saved-reply)?_
+
+---
+
+## Code
+
+
+---
+
+## Code as simple as possible: early returns
+
+:eyes:
+
+```{r, eval = FALSE}
+do_this <- function() {
+  if (!is_that_present()) {
+    return(NULL)
+  } else {
+    # more code
+    return(blip)
+  }
+}
+
+```
+
+---
+
+## Code as simple as possible: early returns
+
+:sparkles:
+
+```{r, eval = FALSE}
+do_this <- function() {
+  if (!is_that_present()) {
+    return(NULL)
+  } 
+  # more code
+  
+  blip
+}
+
+```
+
+---
+
+## Code as simple as possible: early returns
+
+Further reading: [Code Smells and Feels](https://github.com/jennybc/code-smells-and-feels) by Jenny Bryan
+
+_:toolbox: Look at logic in one or a few functions. Could you simplify it with early returns, helper functions?_
+
+---
