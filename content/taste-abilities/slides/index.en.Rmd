@@ -104,7 +104,7 @@ Then we can discuss or you can pick one aspect to explore in your one package.
 
 ---
 
-## Nice messages
+### Nice messages
 
 Get to know the [cli package](https://cli.r-lib.org/reference/index.html)
 
@@ -115,7 +115,7 @@ cli::cli_alert_info("Set {.field parameter} to {.val {variable}}")
 
 ---
 
-## Nice messages
+### Nice messages
 
 How to control verbosity? How to shup your package up?
 
@@ -133,7 +133,7 @@ cli_alert_info <- function(...) {
 
 ---
 
-## Nice messages
+### Nice messages
 
 Further reading: https://github.com/ropensci/dev_guide/issues/603
 
@@ -141,7 +141,7 @@ _:toolbox: Are there messages in your package you could improve?_
 
 ---
 
-## Error messages
+### Error messages
 
 * Tips on content in the [tidyverse style guide](https://style.tidyverse.org/error-messages.html) with examples. 
 
@@ -159,13 +159,13 @@ cli::cli_abort(
 
 ---
 
-## Error messages
+### Error messages
 
 _:toolbox: Go through your package's error messages (look for `stop()` and equivalents). Could some of them be improved by applying the tidyverse guidance?_
 
 ---
 
-## Argument checks
+### Argument checks
 
 * Document argument type, default.
 
@@ -175,7 +175,7 @@ Further reading: [Checking the inputs of your R functions](https://blog.r-hub.io
 
 ---
 
-## Arguments checks
+### Arguments checks
 
 _:toolbox: Does your package document and validate arguments? Improve this in one function._
 
@@ -185,7 +185,7 @@ _:toolbox: Does your package document and validate arguments? Improve this in on
 
 ---
 
-## Weigh your dependencies
+### Weigh your dependencies
 
 Does this dependency spark joy? :wink:
 
@@ -196,13 +196,13 @@ Further reading: [Dependencies: Mindset and Background](https://r-pkgs.org/depen
 
 ---
 
-## Weight your dependencies
+### Weight your dependencies
 
 _:toolbox: Are there dependencies you could add or remove from your package?_
 
 ---
 
-## Less code?
+### Less code?
 
 Feature creep: " excessive ongoing expansion or addition of new features in a product" https://en.wikipedia.org/wiki/Feature_creep
 
@@ -210,11 +210,9 @@ Okay to split the package.
 
 Okay to say no to feature requests. [Example](https://github.com/r-lib/pkgdown/issues/1430#issuecomment-924268834)
 
-> Thanks for filing this issue! Unfortunately, developing good software requires relentless focus, which means that we have to say no to many good ideas. Even though I'm closing this issue, I really appreciate the feedback, and hope you'll continue to contribute in the future smile
-
 ---
 
-## Less code
+### Less code
 
 _:toolbox: Are there feature requests you'd like to say no to? Save answer as [GitHub reply](https://docs.github.com/en/get-started/writing-on-github/working-with-saved-replies/creating-a-saved-reply)?_
 
@@ -225,7 +223,7 @@ _:toolbox: Are there feature requests you'd like to say no to? Save answer as [G
 
 ---
 
-## Code as simple as possible: early returns
+### Code as simple as possible: early returns
 
 :eyes:
 
@@ -243,7 +241,7 @@ do_this <- function() {
 
 ---
 
-## Code as simple as possible: early returns
+### Code as simple as possible: early returns
 
 :sparkles:
 
@@ -261,10 +259,212 @@ do_this <- function() {
 
 ---
 
-## Code as simple as possible: early returns
+### Code as simple as possible: early returns
 
 Further reading: [Code Smells and Feels](https://github.com/jennybc/code-smells-and-feels) by Jenny Bryan
 
 _:toolbox: Look at logic in one or a few functions. Could you simplify it with early returns, helper functions?_
 
 ---
+
+### Code aesthetics
+
+Probably mostly relevant if you see code.
+
+* Use alignment?
+* Use paragraphs
+* Use "header" comments for navigation.
+
+---
+
+#### Code alignment
+
+* Align argument in function definitions.
+
+* More vertical alignment? I am not sensitive to it. :innocent:
+
+---
+
+#### Paragraphs
+
+One paragraph = one idea (works for writing prose too!).
+
+Vertical space is costly (what fits on the screen?)
+
+
+```{r, eval = FALSE}
+head <- collect_metadata(website)
+head_string <- stringify(head)
+
+body <- create_content(website)
+body_string <- stringify(body)
+
+```
+
+---
+
+#### Header comments
+
+At least in RStudio IDE, outline on the right.
+In any case good to indicate high-level structure within a script.
+
+```{r, eval = FALSE}
+# Header level 1 ----
+more code
+
+## Header level 2 ----
+more code
+```
+
+---
+
+
+### Code aesthetics
+
+_:toolbox: Open one or a few scripts, can you improve the splitting into paragraphs?_
+
+---
+
+
+### Less comments / self explaining code
+
+Comments are like little alerts. Don't create fatigue!
+
+Comments that repeat the code get out of date.
+
+---
+
+### Less comments / self explaining code
+
+```r
+is_non_empty_string <- function(x) {
+  !is.na(x) && nzchar(x)
+}
+
+if (is_non_empty_string(x)) {
+  use_string(x)
+}
+```
+
+---
+
+### Less comments / self-explaining code
+
+Further reading: https://blog.r-hub.io/2023/01/26/code-comments-self-explaining-code/
+
+_:toolbox: Are there opportunities for less comments (or more comments!) in some of your scripts?_
+
+---
+
+## Test code
+
+---
+
+### DAMP / DRY
+
+DAMP: descriptive and meaningful.
+
+DRY: don't repeat yourself.
+
+A trade-off!
+
+---
+
+### Test code vs code
+
+Code is covered by test code so we can take more risks!
+
+---
+
+### Ideal tests
+
+- Self-contained.
+
+- Can be run interactively. `testthat::test_path()`.
+
+- No leak. {withr}. `withr::local_options()`, `withr::local_tempdir()`...
+
+---
+
+### Example: {swamp}
+
+Let's explore https://github.com/maelle/swamp
+
+_:toolbox: Do some of your tests have top-level code? Can you create helper files and helper functions, and repeat object creation in each test?_
+
+---
+
+### Escape hatches
+
+My code
+
+```{r, eval = FALSE}
+
+
+is_internet_down <- function() {
+  !curl::has_internet()
+}
+
+my_complicated_code <- function() {
+  if (is_internet_down()) {
+    message("No internet! Le sigh")
+  }
+  # blablablabla
+}
+```
+
+How to test for the message?
+
+---
+
+### Escape hatch
+
+Let's add a switch/escape hatch
+
+```{r, eval=FALSE}
+is_internet_down <- function() {
+
+  if (nzchar(Sys.getenv("TESTPKG.NOINTERNET"))) {
+    return(TRUE)
+  }
+
+  !curl::has_internet()
+}
+```
+
+---
+
+### Escape hatches
+
+In the test,
+
+```{r, eval=FALSE}
+
+
+test_that("my_complicated_code() notes the absence of internet", {
+  withr::local_envvar("TESTPKG.NOINTERNET" = "blop")
+  expect_message(my_complicated_code(), "No internet")
+})
+
+
+```
+
+---
+
+### Escape hatches
+
+Further reading: https://blog.r-hub.io/2023/01/23/code-switch-escape-hatch-test/
+
+---
+
+### Escape hatches
+
+_:toolbox: do you have such a situation to test?_
+
+---
+
+## Conclusion
+
+Choose your own adventure with your own package! In breakout rooms.
+
+We'll gather in XX minutes as a group to discuss.

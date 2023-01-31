@@ -7,7 +7,7 @@ layout: list
 weight: 11
 output: hugodown::md_document
 countdown: true
-rmd_hash: cbf598d53cf13afa
+rmd_hash: 3f650e95cd598173
 
 ---
 
@@ -79,7 +79,7 @@ Then we can discuss or you can pick one aspect to explore in your one package.
 
 ------------------------------------------------------------------------
 
-## Nice messages
+### Nice messages
 
 Get to know the [cli package](https://cli.r-lib.org/reference/index.html)
 
@@ -92,7 +92,7 @@ Get to know the [cli package](https://cli.r-lib.org/reference/index.html)
 
 ------------------------------------------------------------------------
 
-## Nice messages
+### Nice messages
 
 How to control verbosity? How to shup your package up?
 
@@ -112,7 +112,7 @@ How to control verbosity? How to shup your package up?
 
 ------------------------------------------------------------------------
 
-## Nice messages
+### Nice messages
 
 Further reading: <https://github.com/ropensci/dev_guide/issues/603>
 
@@ -120,7 +120,7 @@ Further reading: <https://github.com/ropensci/dev_guide/issues/603>
 
 ------------------------------------------------------------------------
 
-## Error messages
+### Error messages
 
 -   Tips on content in the [tidyverse style guide](https://style.tidyverse.org/error-messages.html) with examples.
 
@@ -141,13 +141,13 @@ Further reading: <https://github.com/ropensci/dev_guide/issues/603>
 
 ------------------------------------------------------------------------
 
-## Error messages
+### Error messages
 
 *:toolbox: Go through your package's error messages (look for [`stop()`](https://rdrr.io/r/base/stop.html) and equivalents). Could some of them be improved by applying the tidyverse guidance?*
 
 ------------------------------------------------------------------------
 
-## Argument checks
+### Argument checks
 
 -   Document argument type, default.
 
@@ -157,7 +157,7 @@ Further reading: [Checking the inputs of your R functions](https://blog.r-hub.io
 
 ------------------------------------------------------------------------
 
-## Arguments checks
+### Arguments checks
 
 *:toolbox: Does your package document and validate arguments? Improve this in one function.*
 
@@ -167,7 +167,7 @@ Further reading: [Checking the inputs of your R functions](https://blog.r-hub.io
 
 ------------------------------------------------------------------------
 
-## Weigh your dependencies
+### Weigh your dependencies
 
 Does this dependency spark joy? :wink:
 
@@ -178,13 +178,13 @@ Further reading: [Dependencies: Mindset and Background](https://r-pkgs.org/depen
 
 ------------------------------------------------------------------------
 
-## Weight your dependencies
+### Weight your dependencies
 
 *:toolbox: Are there dependencies you could add or remove from your package?*
 
 ------------------------------------------------------------------------
 
-## Less code?
+### Less code?
 
 Feature creep: " excessive ongoing expansion or addition of new features in a product" <https://en.wikipedia.org/wiki/Feature_creep>
 
@@ -192,11 +192,9 @@ Okay to split the package.
 
 Okay to say no to feature requests. [Example](https://github.com/r-lib/pkgdown/issues/1430#issuecomment-924268834)
 
-> Thanks for filing this issue! Unfortunately, developing good software requires relentless focus, which means that we have to say no to many good ideas. Even though I'm closing this issue, I really appreciate the feedback, and hope you'll continue to contribute in the future smile
-
 ------------------------------------------------------------------------
 
-## Less code
+### Less code
 
 *:toolbox: Are there feature requests you'd like to say no to? Save answer as [GitHub reply](https://docs.github.com/en/get-started/writing-on-github/working-with-saved-replies/creating-a-saved-reply)?*
 
@@ -206,7 +204,7 @@ Okay to say no to feature requests. [Example](https://github.com/r-lib/pkgdown/i
 
 ------------------------------------------------------------------------
 
-## Code as simple as possible: early returns
+### Code as simple as possible: early returns
 
 :eyes:
 
@@ -226,7 +224,7 @@ Okay to say no to feature requests. [Example](https://github.com/r-lib/pkgdown/i
 
 ------------------------------------------------------------------------
 
-## Code as simple as possible: early returns
+### Code as simple as possible: early returns
 
 :sparkles:
 
@@ -246,11 +244,219 @@ Okay to say no to feature requests. [Example](https://github.com/r-lib/pkgdown/i
 
 ------------------------------------------------------------------------
 
-## Code as simple as possible: early returns
+### Code as simple as possible: early returns
 
 Further reading: [Code Smells and Feels](https://github.com/jennybc/code-smells-and-feels) by Jenny Bryan
 
 *:toolbox: Look at logic in one or a few functions. Could you simplify it with early returns, helper functions?*
 
 ------------------------------------------------------------------------
+
+### Code aesthetics
+
+Probably mostly relevant if you see code.
+
+-   Use alignment?
+-   Use paragraphs
+-   Use "header" comments for navigation.
+
+------------------------------------------------------------------------
+
+#### Code alignment
+
+-   Align argument in function definitions.
+
+-   More vertical alignment? I am not sensitive to it. :innocent:
+
+------------------------------------------------------------------------
+
+#### Paragraphs
+
+One paragraph = one idea (works for writing prose too!).
+
+Vertical space is costly (what fits on the screen?)
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>head</span> <span class='o'>&lt;-</span> <span class='nf'>collect_metadata</span><span class='o'>(</span><span class='nv'>website</span><span class='o'>)</span></span>
+<span><span class='nv'>head_string</span> <span class='o'>&lt;-</span> <span class='nf'>stringify</span><span class='o'>(</span><span class='nv'>head</span><span class='o'>)</span></span>
+<span></span>
+<span><span class='nv'>body</span> <span class='o'>&lt;-</span> <span class='nf'>create_content</span><span class='o'>(</span><span class='nv'>website</span><span class='o'>)</span></span>
+<span><span class='nv'>body_string</span> <span class='o'>&lt;-</span> <span class='nf'>stringify</span><span class='o'>(</span><span class='nv'>body</span><span class='o'>)</span></span>
+<span></span></code></pre>
+
+</div>
+
+------------------------------------------------------------------------
+
+#### Header comments
+
+At least in RStudio IDE, outline on the right. In any case good to indicate high-level structure within a script.
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'># Header level 1 ----
+more code
+
+## Header level 2 ----
+more code</code></pre>
+
+</div>
+
+------------------------------------------------------------------------
+
+### Code aesthetics
+
+*:toolbox: Open one or a few scripts, can you improve the splitting into paragraphs?*
+
+------------------------------------------------------------------------
+
+### Less comments / self explaining code
+
+Comments are like little alerts. Don't create fatigue!
+
+Comments that repeat the code get out of date.
+
+------------------------------------------------------------------------
+
+### Less comments / self explaining code
+
+``` r
+is_non_empty_string <- function(x) {
+  !is.na(x) && nzchar(x)
+}
+
+if (is_non_empty_string(x)) {
+  use_string(x)
+}
+```
+
+------------------------------------------------------------------------
+
+### Less comments / self-explaining code
+
+Further reading: <https://blog.r-hub.io/2023/01/26/code-comments-self-explaining-code/>
+
+*:toolbox: Are there opportunities for less comments (or more comments!) in some of your scripts?*
+
+------------------------------------------------------------------------
+
+## Test code
+
+------------------------------------------------------------------------
+
+### DAMP / DRY
+
+DAMP: descriptive and meaningful.
+
+DRY: don't repeat yourself.
+
+A trade-off!
+
+------------------------------------------------------------------------
+
+### Test code vs code
+
+Code is covered by test code so we can take more risks!
+
+------------------------------------------------------------------------
+
+### Ideal tests
+
+-   Self-contained.
+
+-   Can be run interactively. [`testthat::test_path()`](https://testthat.r-lib.org/reference/test_path.html).
+
+-   No leak. {withr}. [`withr::local_options()`](https://withr.r-lib.org/reference/with_options.html), [`withr::local_tempdir()`](https://withr.r-lib.org/reference/with_tempfile.html)...
+
+------------------------------------------------------------------------
+
+### Example: {swamp}
+
+Let's explore <https://github.com/maelle/swamp>
+
+*:toolbox: Do some of your tests have top-level code? Can you create helper files and helper functions, and repeat object creation in each test?*
+
+------------------------------------------------------------------------
+
+### Escape hatches
+
+My code
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'><span></span>
+<span></span>
+<span><span class='nv'>is_internet_down</span> <span class='o'>&lt;-</span> <span class='kr'>function</span><span class='o'>(</span><span class='o'>)</span> <span class='o'>&#123;</span></span>
+<span>  <span class='o'>!</span><span class='nf'>curl</span><span class='nf'>::</span><span class='nf'><a href='https://rdrr.io/pkg/curl/man/nslookup.html'>has_internet</a></span><span class='o'>(</span><span class='o'>)</span></span>
+<span><span class='o'>&#125;</span></span>
+<span></span>
+<span><span class='nv'>my_complicated_code</span> <span class='o'>&lt;-</span> <span class='kr'>function</span><span class='o'>(</span><span class='o'>)</span> <span class='o'>&#123;</span></span>
+<span>  <span class='kr'>if</span> <span class='o'>(</span><span class='nf'>is_internet_down</span><span class='o'>(</span><span class='o'>)</span><span class='o'>)</span> <span class='o'>&#123;</span></span>
+<span>    <span class='nf'><a href='https://rdrr.io/r/base/message.html'>message</a></span><span class='o'>(</span><span class='s'>"No internet! Le sigh"</span><span class='o'>)</span></span>
+<span>  <span class='o'>&#125;</span></span>
+<span>  <span class='c'># blablablabla</span></span>
+<span><span class='o'>&#125;</span></span></code></pre>
+
+</div>
+
+How to test for the message?
+
+------------------------------------------------------------------------
+
+### Escape hatch
+
+Let's add a switch/escape hatch
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>is_internet_down</span> <span class='o'>&lt;-</span> <span class='kr'>function</span><span class='o'>(</span><span class='o'>)</span> <span class='o'>&#123;</span></span>
+<span></span>
+<span>  <span class='kr'>if</span> <span class='o'>(</span><span class='nf'><a href='https://rdrr.io/r/base/nchar.html'>nzchar</a></span><span class='o'>(</span><span class='nf'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='o'>(</span><span class='s'>"TESTPKG.NOINTERNET"</span><span class='o'>)</span><span class='o'>)</span><span class='o'>)</span> <span class='o'>&#123;</span></span>
+<span>    <span class='kr'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='o'>(</span><span class='kc'>TRUE</span><span class='o'>)</span></span>
+<span>  <span class='o'>&#125;</span></span>
+<span></span>
+<span>  <span class='o'>!</span><span class='nf'>curl</span><span class='nf'>::</span><span class='nf'><a href='https://rdrr.io/pkg/curl/man/nslookup.html'>has_internet</a></span><span class='o'>(</span><span class='o'>)</span></span>
+<span><span class='o'>&#125;</span></span></code></pre>
+
+</div>
+
+------------------------------------------------------------------------
+
+### Escape hatches
+
+In the test,
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'><span></span>
+<span></span>
+<span><span class='nf'>test_that</span><span class='o'>(</span><span class='s'>"my_complicated_code() notes the absence of internet"</span>, <span class='o'>&#123;</span></span>
+<span>  <span class='nf'>withr</span><span class='nf'>::</span><span class='nf'><a href='https://withr.r-lib.org/reference/with_envvar.html'>local_envvar</a></span><span class='o'>(</span><span class='s'>"TESTPKG.NOINTERNET"</span> <span class='o'>=</span> <span class='s'>"blop"</span><span class='o'>)</span></span>
+<span>  <span class='nf'>expect_message</span><span class='o'>(</span><span class='nf'>my_complicated_code</span><span class='o'>(</span><span class='o'>)</span>, <span class='s'>"No internet"</span><span class='o'>)</span></span>
+<span><span class='o'>&#125;</span><span class='o'>)</span></span>
+<span></span>
+<span></span></code></pre>
+
+</div>
+
+------------------------------------------------------------------------
+
+### Escape hatches
+
+Further reading: <https://blog.r-hub.io/2023/01/23/code-switch-escape-hatch-test/>
+
+------------------------------------------------------------------------
+
+### Escape hatches
+
+*:toolbox: do you have such a situation to test?*
+
+------------------------------------------------------------------------
+
+## Conclusion
+
+Choose your own adventure with your own package! In breakout rooms.
+
+We'll gather in XX minutes as a group to discuss.
 
