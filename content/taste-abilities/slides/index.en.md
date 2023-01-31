@@ -7,7 +7,7 @@ layout: list
 weight: 11
 output: hugodown::md_document
 countdown: true
-rmd_hash: 8ea19cea012e11fa
+rmd_hash: 63a50cdfec3220c9
 
 ---
 
@@ -71,7 +71,11 @@ David Robinson's blog post ["A Million Lines of Bad Code"](http://varianceexplai
 
 I'll present a collection of very useful things I've learnt over the past few years.
 
-Then we can discuss or you can pick one aspect to explore in your one package.
+Then you pick up one thing to improve in your package, and open a PR.
+
+Then another short slidedeck.
+
+Then you get to review someone else's PR!
 
 ------------------------------------------------------------------------
 
