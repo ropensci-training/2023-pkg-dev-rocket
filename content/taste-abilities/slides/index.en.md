@@ -7,7 +7,7 @@ layout: list
 weight: 11
 output: hugodown::md_document
 countdown: true
-rmd_hash: 3f650e95cd598173
+rmd_hash: 8ea19cea012e11fa
 
 ---
 
@@ -454,9 +454,11 @@ Further reading: <https://blog.r-hub.io/2023/01/23/code-switch-escape-hatch-test
 
 ------------------------------------------------------------------------
 
-## Conclusion
+## Choose your own adventure
 
-Choose your own adventure with your own package! In breakout rooms.
+...with your own package! In breakout rooms.
+
+:warning: Make Pull Requests and don't merge them yet! :warning:
 
 We'll gather in XX minutes as a group to discuss.
 
