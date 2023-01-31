@@ -7,7 +7,7 @@ layout: list
 weight: 11
 output: hugodown::md_document
 countdown: true
-rmd_hash: a6c0da440a7f64b5
+rmd_hash: 4aa88c5f3d46182e
 
 ---
 
@@ -80,7 +80,9 @@ Anything to report from the breakout rooms?
 -   collection of tips/patterns;
 -   importance of team work.
 
-How to keep learning?
+------------------------------------------------------------------------
+
+## How to keep learning?
 
 -   Read blogs,
 -   Follow the development of your favorite packages,

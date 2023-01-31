@@ -98,7 +98,9 @@ Anything to report from the breakout rooms?
 - collection of tips/patterns;
 - importance of team work.
 
-How to keep learning?
+---
+
+## How to keep learning?
 
 - Read blogs,
 - Follow the development of your favorite packages,
