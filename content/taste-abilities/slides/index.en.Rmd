@@ -463,8 +463,10 @@ _:toolbox: do you have such a situation to test?_
 
 ---
 
-## Conclusion
+## Choose your own adventure
 
-Choose your own adventure with your own package! In breakout rooms.
+...with your own package! In breakout rooms.
+
+:warning: Make Pull Requests and don't merge them yet! :warning:
 
 We'll gather in XX minutes as a group to discuss.
