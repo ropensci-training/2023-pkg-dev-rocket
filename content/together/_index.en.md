@@ -1,6 +1,6 @@
 ---
 title: Develop Packages Together
-weight: 2
+weight: 3
 chapter: true
 slides: true
 menuTitle: Together
