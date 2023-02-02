@@ -7,7 +7,7 @@ layout: list
 weight: 11
 output: hugodown::md_document
 countdown: true
-rmd_hash: 00eb8455c8661afb
+rmd_hash: fbb25537eb6df433
 
 ---
 
@@ -320,6 +320,17 @@ more code</code></pre>
 Comments are like little alerts. Don't create fatigue!
 
 Comments that repeat the code get out of date.
+
+------------------------------------------------------------------------
+
+### Less comments / self explaining code
+
+``` r
+# use only non empty strings
+if (!is.na(x) && nzchar(x)) {
+  use_string(x)
+}
+```
 
 ------------------------------------------------------------------------
 

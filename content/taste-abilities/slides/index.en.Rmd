@@ -341,6 +341,17 @@ Comments that repeat the code get out of date.
 ### Less comments / self explaining code
 
 ```r
+# use only non empty strings
+if (!is.na(x) && nzchar(x)) {
+  use_string(x)
+}
+```
+
+---
+
+### Less comments / self explaining code
+
+```r
 is_non_empty_string <- function(x) {
   !is.na(x) && nzchar(x)
 }
