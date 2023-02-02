@@ -83,6 +83,8 @@ Read examples at https://github.com/ropensci/software-review/issues/ for instanc
 
 - use line comments including code suggestions.
 
+- https://davisvaughan.github.io/code-review/
+
 Let's demo this live on the [course repo](https://github.com/maelle/2023-pkg-dev-rocket).
 
 

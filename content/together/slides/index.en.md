@@ -7,7 +7,7 @@ layout: list
 weight: 11
 output: hugodown::md_document
 countdown: true
-rmd_hash: bda604914b34740a
+rmd_hash: 39a6649cbe14c3c0
 
 ---
 
@@ -64,6 +64,8 @@ Read examples at <https://github.com/ropensci/software-review/issues/> for insta
 -   [usethis helpers](https://usethis.r-lib.org/articles/pr-functions.html) (or GitHub Desktop)?
 
 -   use line comments including code suggestions.
+
+-   <https://davisvaughan.github.io/code-review/>
 
 Let's demo this live on the [course repo](https://github.com/maelle/2023-pkg-dev-rocket).
 
