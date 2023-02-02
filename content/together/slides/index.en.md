@@ -7,7 +7,7 @@ layout: list
 weight: 11
 output: hugodown::md_document
 countdown: true
-rmd_hash: 57759877ce8112bd
+rmd_hash: bda604914b34740a
 
 ---
 
@@ -53,9 +53,19 @@ Read examples at <https://github.com/ropensci/software-review/issues/> for insta
 
 -   Smaller scope.
 
--   Help strengthen the code, comments, docs, tests.
+-   Helps strengthen the code, comments, docs, tests.
 
--   Help share knowledge.
+-   Helps share knowledge.
+
+------------------------------------------------------------------------
+
+## Pull request review tips
+
+-   [usethis helpers](https://usethis.r-lib.org/articles/pr-functions.html) (or GitHub Desktop)?
+
+-   use line comments including code suggestions.
+
+Let's demo this live on the [course repo](https://github.com/maelle/2023-pkg-dev-rocket).
 
 ------------------------------------------------------------------------
 
