@@ -7,7 +7,7 @@ layout: list
 weight: 11
 output: hugodown::md_document
 countdown: true
-rmd_hash: ebf4b99fbe5e4959
+rmd_hash: 00eb8455c8661afb
 
 ---
 
@@ -311,7 +311,7 @@ more code</code></pre>
 
 ### Code aesthetics
 
-*:toolbox: Open one or a few scripts, can you improve the splitting into paragraphs?*
+*:toolbox: Open one or a few scripts, can you improve the aesthetics?*
 
 ------------------------------------------------------------------------
 

@@ -325,7 +325,7 @@ more code
 
 ### Code aesthetics
 
-_:toolbox: Open one or a few scripts, can you improve the splitting into paragraphs?_
+_:toolbox: Open one or a few scripts, can you improve the aesthetics?_
 
 ---
 
