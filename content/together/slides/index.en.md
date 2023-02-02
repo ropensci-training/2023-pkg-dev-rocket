@@ -7,7 +7,7 @@ layout: list
 weight: 11
 output: hugodown::md_document
 countdown: true
-rmd_hash: df147b2714bc63fe
+rmd_hash: 4463de35b5c5b542
 
 ---
 
@@ -29,7 +29,7 @@ rmd_hash: df147b2714bc63fe
 
 Non adversarial, constructive.
 
-Help disseminate best practice.
+Helps disseminate best practice.
 
 Builds a community of practice.
 

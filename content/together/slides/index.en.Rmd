@@ -47,7 +47,7 @@ get_pic(id = 7105805, alt = "Plastic rocket ship", 200)
 
 Non adversarial, constructive.
 
-Help disseminate best practice.
+Helps disseminate best practice.
 
 Builds a community of practice.
 
