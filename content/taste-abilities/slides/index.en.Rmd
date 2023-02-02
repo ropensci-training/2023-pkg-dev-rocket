@@ -206,9 +206,9 @@ _:toolbox: Are there dependencies you could add or remove from your package?_
 
 ---
 
-### Less code?
+### Less code? Beyond using dependencies
 
-Feature creep: " excessive ongoing expansion or addition of new features in a product" https://en.wikipedia.org/wiki/Feature_creep
+Feature creep: "excessive ongoing expansion or addition of new features in a product" https://en.wikipedia.org/wiki/Feature_creep
 
 Okay to split the package.
 

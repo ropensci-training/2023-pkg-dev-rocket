@@ -7,7 +7,7 @@ layout: list
 weight: 11
 output: hugodown::md_document
 countdown: true
-rmd_hash: e14254ce5e9eba54
+rmd_hash: 4822deecc07b06fc
 
 ---
 
@@ -188,9 +188,9 @@ Further reading: [Dependencies: Mindset and Background](https://r-pkgs.org/depen
 
 ------------------------------------------------------------------------
 
-### Less code?
+### Less code? Beyond using dependencies
 
-Feature creep: " excessive ongoing expansion or addition of new features in a product" <https://en.wikipedia.org/wiki/Feature_creep>
+Feature creep: "excessive ongoing expansion or addition of new features in a product" <https://en.wikipedia.org/wiki/Feature_creep>
 
 Okay to split the package.
 
