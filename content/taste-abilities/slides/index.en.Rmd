@@ -273,7 +273,7 @@ _:toolbox: Look at logic in one or a few functions. Could you simplify it with e
 
 ### Code aesthetics
 
-Probably mostly relevant if you see code.
+Some of it only relevant if you see code.
 
 * Use alignment?
 * Use paragraphs

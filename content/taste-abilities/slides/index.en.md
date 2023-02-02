@@ -7,7 +7,7 @@ layout: list
 weight: 11
 output: hugodown::md_document
 countdown: true
-rmd_hash: 4822deecc07b06fc
+rmd_hash: ebf4b99fbe5e4959
 
 ---
 
@@ -258,7 +258,7 @@ Further reading: [Code Smells and Feels](https://github.com/jennybc/code-smells-
 
 ### Code aesthetics
 
-Probably mostly relevant if you see code.
+Some of it only relevant if you see code.
 
 -   Use alignment?
 -   Use paragraphs
