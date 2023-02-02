@@ -7,7 +7,7 @@ layout: list
 weight: 11
 output: hugodown::md_document
 countdown: true
-rmd_hash: 4463de35b5c5b542
+rmd_hash: 57759877ce8112bd
 
 ---
 
@@ -45,7 +45,7 @@ Builds a community of practice.
 
 ## rOpenSci software review
 
-Read examples at <https://github.com/ropensci/software-review/issues/> for instance for a package you know
+Read examples at <https://github.com/ropensci/software-review/issues/> for instance for a package you know (via <https://ropensci.org/packages/all/>)
 
 ------------------------------------------------------------------------
 

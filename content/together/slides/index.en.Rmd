@@ -63,7 +63,7 @@ Builds a community of practice.
 
 ## rOpenSci software review
 
-Read examples at https://github.com/ropensci/software-review/issues/ for instance for a package you know
+Read examples at https://github.com/ropensci/software-review/issues/ for instance for a package you know (via https://ropensci.org/packages/all/)
 
 ---
 
