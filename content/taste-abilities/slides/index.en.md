@@ -7,7 +7,7 @@ layout: list
 weight: 11
 output: hugodown::md_document
 countdown: true
-rmd_hash: 63a50cdfec3220c9
+rmd_hash: 8760ee2ab659a53e
 
 ---
 
@@ -61,7 +61,7 @@ Contributed to
 
 ## What is good code?
 
-> If you're an experienced programmer and you're tempted to code-shame someone, try thinking back to your own million lines of bad code. Imagine someone had mocked you then, the way I'd like to mock myself for my Perl/Java "solution". Would you have continued asking for help? Would you have ever gotten through your million lines?
+> If you're an experienced programmer and you're tempted to code-shame someone, try thinking back to your own million lines of bad code. Imagine someone had mocked you then (...). Would you have continued asking for help? Would you have ever gotten through your million lines?
 
 David Robinson's blog post ["A Million Lines of Bad Code"](http://varianceexplained.org/programming/bad-code/)
 
