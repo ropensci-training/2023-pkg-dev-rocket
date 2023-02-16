@@ -7,7 +7,7 @@ layout: list
 weight: 11
 output: hugodown::md_document
 countdown: true
-rmd_hash: 7330f7f3748a74a1
+rmd_hash: 152e10574ec8e26e
 
 ---
 
@@ -186,7 +186,7 @@ Further reading: [Dependencies: Mindset and Background](https://r-pkgs.org/depen
 
 ### Weigh your dependencies
 
-*:toolbox: Are there dependencies you could add or remove from your package?*
+*:toolbox: Are there dependencies you could add, replace or remove in your package?*
 
 ------------------------------------------------------------------------
 

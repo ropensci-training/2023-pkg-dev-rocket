@@ -204,7 +204,7 @@ Further reading: [Dependencies: Mindset and Background](https://r-pkgs.org/depen
 
 ### Weigh your dependencies
 
-_:toolbox: Are there dependencies you could add or remove from your package?_
+_:toolbox: Are there dependencies you could add, replace or remove in your package?_
 
 ---
 
