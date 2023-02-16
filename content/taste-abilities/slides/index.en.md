@@ -7,7 +7,7 @@ layout: list
 weight: 11
 output: hugodown::md_document
 countdown: true
-rmd_hash: 152e10574ec8e26e
+rmd_hash: c2b92f5ff9681c51
 
 ---
 
@@ -181,6 +181,20 @@ Does this dependency spark joy? :wink:
 -   A dependency is a failure point.
 
 Further reading: [Dependencies: Mindset and Background](https://r-pkgs.org/dependencies-mindset-background.html) in the R Packages book by Hadley Wickham and Jenny Bryan.
+
+------------------------------------------------------------------------
+
+### Weigh your dependencies
+
+In [rOpenSci dev guide](https://devguide.ropensci.org/building.html#recommended-scaffolding)
+
+-   curl, httr2, httr. Not RCurl.
+
+-   jsonlite. Not rjson nor RJSONIO.
+
+-   xml2. Not XML
+
+-   sf, spatial suites developed by the r-spatial and rspatial communities. Not sp, rgdal, maptools, rgeos.
 
 ------------------------------------------------------------------------
 

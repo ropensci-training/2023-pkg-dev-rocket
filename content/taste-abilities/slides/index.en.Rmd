@@ -204,6 +204,20 @@ Further reading: [Dependencies: Mindset and Background](https://r-pkgs.org/depen
 
 ### Weigh your dependencies
 
+In [rOpenSci dev guide](https://devguide.ropensci.org/building.html#recommended-scaffolding)
+
+- curl, httr2, httr. Not RCurl.
+
+- jsonlite. Not rjson nor RJSONIO.
+
+- xml2. Not XML
+
+- sf, spatial suites developed by the r-spatial and rspatial communities. Not sp, rgdal, maptools, rgeos.
+
+---
+
+### Weigh your dependencies
+
 _:toolbox: Are there dependencies you could add, replace or remove in your package?_
 
 ---
