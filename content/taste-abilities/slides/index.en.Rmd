@@ -117,6 +117,8 @@ variable <- 42
 cli::cli_alert_info("Set {.field parameter} to {.val {variable}}")
 ```
 
+[Vignette to migrate from usethis::ui functions to cli](https://cli.r-lib.org/articles/usethis-ui.html)
+
 ---
 
 ### Nice messages

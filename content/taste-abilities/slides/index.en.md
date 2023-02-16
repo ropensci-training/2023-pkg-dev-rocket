@@ -7,7 +7,7 @@ layout: list
 weight: 11
 output: hugodown::md_document
 countdown: true
-rmd_hash: fbb25537eb6df433
+rmd_hash: 7330f7f3748a74a1
 
 ---
 
@@ -93,6 +93,8 @@ Get to know the [cli package](https://cli.r-lib.org/reference/index.html)
 <span><span class='nf'>cli</span><span class='nf'>::</span><span class='nf'><a href='https://cli.r-lib.org/reference/cli_alert.html'>cli_alert_info</a></span><span class='o'>(</span><span class='s'>"Set &#123;.field parameter&#125; to &#123;.val &#123;variable&#125;&#125;"</span><span class='o'>)</span></span><span><span class='c'>#&gt; <span style='color: #00BBBB;'>ℹ</span> Set <span style='color: #00BB00;'>parameter</span> to <span style='color: #0000BB;'>42</span></span></span></code></pre>
 
 </div>
+
+[Vignette to migrate from usethis::ui functions to cli](https://cli.r-lib.org/articles/usethis-ui.html)
 
 ------------------------------------------------------------------------
 
