@@ -7,7 +7,7 @@ layout: list
 weight: 11
 output: hugodown::md_document
 countdown: true
-rmd_hash: c2b92f5ff9681c51
+rmd_hash: 7ea0983666082ee6
 
 ---
 
@@ -70,6 +70,8 @@ David Robinson's blog post ["A Million Lines of Bad Code"](http://varianceexplai
 ## Today's workshop
 
 I'll present a collection of very useful things I've learnt over the past few years.
+
+After each section I'll summarize and ask you to comment.
 
 Then you pick up one thing to improve in your package, and open a PR.
 
@@ -169,6 +171,20 @@ Further reading: [Checking the inputs of your R functions](https://blog.r-hub.io
 
 ------------------------------------------------------------------------
 
+## Interface :microphone: `stop()` :microphone:
+
+-   Nice messages with {cli}.
+-   Error messages with {cli}, tidyverse style guide.
+-   Argument checks with rlang, R-hub blog post.
+
+Please post in the chat
+
+-   Something you found interesting!
+-   Something you disagreed with!
+-   A recent good/bad experience with these tools?
+
+------------------------------------------------------------------------
+
 ## Less code or less headaches
 
 ------------------------------------------------------------------------
@@ -217,6 +233,20 @@ Okay to say no to feature requests. [Example](https://github.com/r-lib/pkgdown/i
 ### Less code
 
 *:toolbox: Are there feature requests you'd like to say no to? Save answer as [GitHub reply](https://docs.github.com/en/get-started/writing-on-github/working-with-saved-replies/creating-a-saved-reply)?*
+
+------------------------------------------------------------------------
+
+## Less code :microphone: `stop()` :microphone:
+
+-   Choosing dependencies.
+-   Dependencies to avoid.
+-   Defining package scope.
+
+Please post in the chat
+
+-   Something you found interesting!
+-   Something you disagreed with!
+-   A recent good/bad experience with these tools?
 
 ------------------------------------------------------------------------
 
@@ -372,6 +402,20 @@ Further reading: <https://blog.r-hub.io/2023/01/26/code-comments-self-explaining
 
 ------------------------------------------------------------------------
 
+## Code :microphone: `stop()` :microphone:
+
+-   Early returns.
+-   Code aesthetics.
+-   Less comments/self-explaining code.
+
+Please post in the chat
+
+-   Something you found interesting!
+-   Something you disagreed with!
+-   A recent good/bad experience with these tools?
+
+------------------------------------------------------------------------
+
 ## Test code
 
 ------------------------------------------------------------------------
@@ -482,6 +526,21 @@ Further reading: <https://blog.r-hub.io/2023/01/23/code-switch-escape-hatch-test
 ### Escape hatches
 
 *:toolbox: do you have such a situation to test?*
+
+------------------------------------------------------------------------
+
+## Test code :microphone: `stop()` :microphone:
+
+-   DAMP & DRY
+-   Test code vs code
+-   Ideal tests (self contained, can be run interactively, no leak)
+-   Escape hatches
+
+Please post in the chat
+
+-   Something you found interesting!
+-   Something you disagreed with!
+-   A recent good/bad experience with these tools?
 
 ------------------------------------------------------------------------
 
